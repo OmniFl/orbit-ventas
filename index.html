@@ -1,62 +1,1010 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Orbit AI — Automatiza tu negocio</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#080B12;color:#F0F4FF;font-family:system-ui,sans-serif}nav{position:fixed;top:0;left:0;right:0;padding:1rem 2rem;background:rgba(8,11,18,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1E2535;display:flex;justify-content:space-between;align-items:center;z-index:100}.logo{font-family:monospace;color:#00E5CC;font-size:1.1rem}.nav-cta{background:#00E5CC;color:#080B12;padding:.5rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(0,229,204,.12) 0%,transparent 70%)}.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,229,204,.1);border:1px solid rgba(0,229,204,.3);color:#00E5CC;padding:.4rem 1rem;border-radius:100px;font-size:.8rem;margin-bottom:2rem}.dot{width:6px;height:6px;background:#00E5CC;border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem}.accent{background:linear-gradient(135deg,#00E5CC,#7B5CFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.sub{font-size:1.2rem;color:#6B7A99;max-width:600px;margin:0 auto 3rem;line-height:1.7}.actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.btn{background:#00E5CC;color:#080B12;padding:.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;border:none;cursor:pointer}.btn2{background:transparent;color:#F0F4FF;padding:.9rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid #1E2535}.stats{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;padding:3rem 2rem;border-top:1px solid #1E2535;border-bottom:1px solid #1E2535}.stat-num{font-family:monospace;font-size:2.5rem;color:#00E5CC;display:block}.stat-label{font-size:.85rem;color:#6B7A99;margin-top:.3rem}section{padding:5rem 2rem;max-width:1100px;margin:0 auto}.label{font-family:monospace;font-size:.75rem;color:#00E5CC;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:1rem}.desc{color:#6B7A99;font-size:1.1rem;max-width:600px;margin-bottom:3rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}.card{background:#111827;border:1px solid #1E2535;border-radius:12px;padding:2rem;transition:all .3s;position:relative}.card:hover{border-color:rgba(0,229,204,.3);transform:translateY(-4px)}.card h3{font-size:1.2rem;margin-bottom:.75rem}.card p{color:#6B7A99;font-size:.95rem;margin-bottom:1.5rem}.price{font-family:monospace;color:#00E5CC;font-size:1.4rem;font-weight:700}.price span{font-size:.8rem;color:#6B7A99;font-family:system-ui}.features{list-style:none;margin:1rem 0 1.5rem}.features li{font-size:.9rem;color:#6B7A99;padding:.3rem 0;display:flex;gap:.5rem}.features li::before{content:"→";color:#00E5CC;flex-shrink:0}.popular{position:absolute;top:1rem;right:1rem;background:#7B5CFA;color:#fff;font-size:.7rem;padding:.2rem .6rem;border-radius:100px;font-weight:600}.icon{font-size:2rem;margin-bottom:1rem;display:block}.form-box{background:#0F1420;border:1px solid #1E2535;border-radius:16px;padding:3rem;max-width:700px;margin:0 auto;text-align:center}.form-grid{display:grid;grid-template-
-cat > index.html << 'EOF'
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Orbit AI — Automatiza tu negocio</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#080B12;color:#F0F4FF;font-family:system-ui,sans-serif}nav{position:fixed;top:0;left:0;right:0;padding:1rem 2rem;background:rgba(8,11,18,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1E2535;display:flex;justify-content:space-between;align-items:center;z-index:100}.logo{font-family:monospace;color:#00E5CC;font-size:1.1rem}.nav-cta{background:#00E5CC;color:#080B12;padding:.5rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(0,229,204,.12) 0%,transparent 70%)}.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,229,204,.1);border:1px solid rgba(0,229,204,.3);color:#00E5CC;padding:.4rem 1rem;border-radius:100px;font-size:.8rem;margin-bottom:2rem}.dot{width:6px;height:6px;background:#00E5CC;border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem}.accent{background:linear-gradient(135deg,#00E5CC,#7B5CFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.sub{font-size:1.2rem;color:#6B7A99;max-width:600px;margin:0 auto 3rem;line-height:1.7}.actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.btn{background:#00E5CC;color:#080B12;padding:.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;border:none;cursor:pointer}.btn2{background:transparent;color:#F0F4FF;padding:.9rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid #1E2535}.stats{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;padding:3rem 2rem;border-top:1px solid #1E2535;border-bottom:1px solid #1E2535}.stat-num{font-family:monospace;font-size:2.5rem;color:#00E5CC;display:block}.stat-label{font-size:.85rem;color:#6B7A99;margin-top:.3rem}section{padding:5rem 2rem;max-width:1100px;margin:0 auto}.label{font-family:monospace;font-size:.75rem;color:#00E5CC;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:1rem}.desc{color:#6B7A99;font-size:1.1rem;max-width:600px;margin-bottom:3rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}.card{background:#111827;border:1px solid #1E2535;border-radius:12px;padding:2rem;transition:all .3s;position:relative}.card:hover{border-color:rgba(0,229,204,.3);transform:translateY(-4px)}.card h3{font-size:1.2rem;margin-bottom:.75rem}.card p{color:#6B7A99;font-size:.95rem;margin-bottom:1.5rem}.price{font-family:monospace;color:#00E5CC;font-size:1.4rem;font-weight:700}.price span{font-size:.8rem;color:#6B7A99;font-family:system-ui}.features{list-style:none;margin:1rem 0 1.5rem}.features li{font-size:.9rem;color:#6B7A99;padding:.3rem 0;display:flex;gap:.5rem}.features li::before{content:"→";color:#00E5CC;flex-shrink:0}.popular{position:absolute;top:1rem;right:1rem;background:#7B5CFA;color:#fff;font-size:.7rem;padding:.2rem .6rem;border-radius:100px;font-weight:600}.icon{font-size:2rem;margin-bottom:1rem;display:block}.form-box{background:#0F1420;border:1px solid #1E2535;border-radius:16px;padding:3rem;max-width:700px;margin:0 auto;text-align:center}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}.full{grid-column:1/-1}input,select,textarea{width:100%;background:#080B12;border:1px solid #1E2535;color:#F0F4FF;padding:.8rem 1rem;border-radius:8px;font-size:.95rem;font-family:system-ui}input:focus,select:focus,textarea:focus{outline:none;border-color:#00E5CC}textarea{min-height:100px;resize:vertical}.note{font-size:.8rem;color:#6B7A99;margin-top:1rem}.faq-list{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}.faq-item{background:#111827;border:1px solid #1E2535;border-radius:10px;overflow:hidden}.faq-q{padding:1.2rem 1.5rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.faq-q:hover{color:#00E5CC}.faq-a{padding:0 1.5rem 1.2rem;color:#6B7A99;font-size:.95rem;display:none}.faq-item.open .faq-a{display:block}.icon-plus{color:#00E5CC;font-family:monospace;transition:transform .2s}.faq-item.open .icon-plus{transform:rotate(45deg)}footer{border-top:1px solid #1E2535;padding:3rem 2rem;text-align:center;color:#6B7A99;font-size:.9rem}.footer-links{display:flex;gap:2rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}.footer-links a{color:#00E5CC;text-decoration:none}.wa{position:fixed;bottom:2rem;right:2rem;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;z-index:99}.notif{position:fixed;bottom:5rem;right:2rem;background:#111827;border:1px solid #00E5CC;border-radius:10px;padding:1rem 1.5rem;max-width:280px;z-index:98;display:none}.notif p{font-size:.85rem;color:#6B7A99;margin-top:.3rem}@media(max-width:768px){.form-grid{grid-template-columns:1fr}.stats{gap:2rem}}</style></head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MagicTours Córdoba — Ricardo Bon Pinilla | Guía Oficial</title>
+<meta name="description" content="Tours privados por Córdoba con guía oficial. Mezquita-Catedral, Judería, Alcázar, Medina Azahara. En español, inglés, francés, portugués e italiano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --oro:      #B8860B;
+  --oro-claro:#D4A843;
+  --tierra:   #8B3A1A;
+  --azul:     #1A3055;
+  --azul-medio:#2C5282;
+  --crema:    #FBF7F0;
+  --crema2:   #F5EFE3;
+  --texto:    #1C1208;
+  --gris:     #6B6560;
+  --blanco:   #FFFFFF;
+  --sombra:   rgba(28,18,8,0.15);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crema);color:var(--texto);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+/* ── LOADER ── */
+.loader{position:fixed;inset:0;background:var(--azul);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease}
+.loader.hidden{opacity:0;pointer-events:none}
+.loader-text{font-family:'Playfair Display',serif;color:var(--oro-claro);font-size:2rem;letter-spacing:.2em;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── LANG SWITCHER ── */
+.lang-bar{position:fixed;top:0;right:0;left:0;z-index:200;display:flex;justify-content:flex-end;padding:.6rem 2rem;gap:.4rem;background:rgba(26,48,85,0.95);backdrop-filter:blur(8px)}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);padding:.25rem .6rem;border-radius:4px;font-size:.75rem;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;letter-spacing:.05em}
+.lang-btn:hover,.lang-btn.active{background:var(--oro-claro);border-color:var(--oro-claro);color:var(--azul);font-weight:600}
+
+/* ── NAV ── */
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;padding:1rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
+nav.scrolled{background:rgba(251,247,240,0.97);backdrop-filter:blur(12px);box-shadow:0 2px 20px var(--sombra)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--blanco);text-decoration:none;transition:color .3s}
+nav.scrolled .nav-logo{color:var(--azul)}
+.nav-logo span{color:var(--oro-claro)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;letter-spacing:.02em}
+nav.scrolled .nav-links a{color:var(--gris)}
+.nav-links a:hover{color:var(--oro-claro)}
+nav.scrolled .nav-links a:hover{color:var(--oro)}
+.nav-cta{background:var(--oro-claro)!important;color:var(--azul)!important;padding:.5rem 1.2rem;border-radius:6px;font-weight:600!important}
+.nav-cta:hover{background:var(--oro)!important;color:var(--blanco)!important}
+
+/* ── HERO ── */
+.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80');background-size:cover;background-position:center;transform:scale(1.05);animation:kenburns 20s ease infinite alternate}
+@keyframes kenburns{from{transform:scale(1.05) translate(0,0)}to{transform:scale(1.12) translate(-2%,-1%)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,48,85,0.7) 0%,rgba(26,18,8,0.6) 60%,rgba(139,58,26,0.3) 100%)}
+.hero-content{position:relative;z-index:2;padding:2rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,168,67,0.15);border:1px solid rgba(212,168,67,0.5);color:var(--oro-claro);padding:.5rem 1.2rem;border-radius:100px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6rem);color:var(--blanco);line-height:1.05;margin-bottom:1rem;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.hero h1 em{font-style:italic;color:var(--oro-claro)}
+.hero-sub{color:rgba(255,255,255,.85);font-size:1.2rem;max-width:600px;margin:0 auto 2.5rem;font-weight:300;line-height:1.7}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--oro-claro);color:var(--azul);padding:.9rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;display:inline-block}
+.btn-gold:hover{background:var(--oro);color:var(--blanco);transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,134,11,.4)}
+.btn-outline{background:transparent;color:var(--blanco);padding:.9rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,.5);transition:all .2s;display:inline-block;font-size:1rem}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:var(--blanco)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;animation:bounce 2s infinite;text-align:center}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
+
+/* ── SECCIONES ── */
+section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
+.full-section{max-width:100%;padding:6rem 2rem}
+.section-eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:600;margin-bottom:.8rem}
+h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.2;margin-bottom:1rem;color:var(--azul)}
+.section-desc{color:var(--gris);font-size:1.1rem;max-width:600px;line-height:1.7;margin-bottom:3rem}
+
+/* ── MONUMENTOS ── */
+.monuments-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.monument-card{border-radius:16px;overflow:hidden;position:relative;height:380px;cursor:pointer;group:hover}
+.monument-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.monument-card:hover img{transform:scale(1.08)}
+.monument-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,18,8,.85) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.monument-badge{display:inline-block;background:var(--oro-claro);color:var(--azul);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;margin-bottom:.5rem;width:fit-content}
+.monument-card h3{font-family:'Playfair Display',serif;color:var(--blanco);font-size:1.3rem;margin-bottom:.3rem}
+.monument-card p{color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.5}
+.monument-card.featured{grid-column:span 2}
+@media(max-width:768px){.monument-card.featured{grid-column:span 1}}
+
+/* ── TOURS ── */
+.tours-bg{background:var(--azul);padding:6rem 2rem}
+.tours-inner{max-width:1200px;margin:0 auto}
+.tours-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:3rem}
+.tour-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,168,67,.2);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.tour-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--oro),var(--oro-claro));opacity:0;transition:opacity .3s}
+.tour-card:hover{border-color:rgba(212,168,67,.5);transform:translateY(-4px);background:rgba(255,255,255,.1)}
+.tour-card:hover::before{opacity:1}
+.tour-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.tour-card h3{font-family:'Playfair Display',serif;color:var(--blanco);font-size:1.2rem;margin-bottom:.5rem}
+.tour-duration{color:var(--oro-claro);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.75rem}
+.tour-card p{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.6;margin-bottom:1.5rem}
+.tour-price-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.tour-price{font-family:'Playfair Display',serif;color:var(--oro-claro);font-size:2rem;font-weight:700}
+.tour-price small{font-size:.8rem;color:rgba(255,255,255,.5);font-family:'Inter',sans-serif;font-weight:400}
+.btn-book{background:var(--oro-claro);color:var(--azul);padding:.6rem 1.2rem;border-radius:6px;font-size:.85rem;font-weight:700;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-book:hover{background:var(--oro);color:var(--blanco)}
+.tour-note{color:rgba(255,255,255,.4);font-size:.75rem;margin-top:.5rem}
+.tour-featured{border-color:rgba(212,168,67,.5);background:rgba(212,168,67,.08)}
+.tour-featured-badge{position:absolute;top:1rem;right:1rem;background:var(--tierra);color:var(--blanco);font-size:.65rem;padding:.2rem .6rem;border-radius:100px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+
+/* ── RICARDO / ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:center}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+.about-img-wrap{position:relative}
+.about-img{width:100%;border-radius:20px;height:500px;object-fit:cover;box-shadow:0 20px 60px var(--sombra)}
+.about-accent{position:absolute;bottom:-20px;right:-20px;background:var(--azul);color:var(--blanco);padding:1.5rem;border-radius:12px;font-size:.85rem;line-height:1.6;max-width:200px;box-shadow:0 8px 30px var(--sombra)}
+.about-accent strong{color:var(--oro-claro);display:block;margin-bottom:.3rem}
+.credentials{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0}
+.credential{display:flex;align-items:center;gap:.75rem;color:var(--gris);font-size:.95rem}
+.credential::before{content:'✓';color:var(--oro);font-weight:700;font-size:1rem;flex-shrink:0}
+.langs-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.lang-tag{background:var(--crema2);color:var(--azul-medio);padding:.35rem .8rem;border-radius:100px;font-size:.8rem;font-weight:600;border:1px solid rgba(44,82,130,.2)}
+
+/* ── GASTRONOMÍA ── */
+.gastro-bg{background:var(--tierra);padding:6rem 2rem}
+.gastro-inner{max-width:1200px;margin:0 auto}
+.tabernas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}
+.taberna-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1.5rem;text-align:center;transition:all .3s}
+.taberna-card:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+.taberna-icon{font-size:2.5rem;margin-bottom:1rem}
+.taberna-card h4{color:var(--blanco);font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.5rem}
+.taberna-card p{color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.5}
+
+/* ── BOOKING MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(26,18,8,.85);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--blanco);border-radius:20px;padding:2.5rem;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem}
+.modal h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--azul)}
+.modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gris);line-height:1;padding:.2rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--texto);margin-bottom:.4rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid #E2D9CE;border-radius:8px;padding:.75rem 1rem;font-family:'Inter',sans-serif;font-size:.95rem;color:var(--texto);background:var(--crema);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--oro)}
+.form-group textarea{min-height:90px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.payment-methods{display:flex;gap:1rem;margin:1.5rem 0;flex-wrap:wrap}
+.payment-opt{flex:1;min-width:140px;border:2px solid #E2D9CE;border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:all .2s}
+.payment-opt:hover,.payment-opt.selected{border-color:var(--oro);background:rgba(212,168,67,.08)}
+.payment-opt .pay-icon{font-size:1.5rem;margin-bottom:.3rem}
+.payment-opt span{font-size:.8rem;font-weight:600;color:var(--gris)}
+.bank-info{background:var(--crema2);border:1px solid rgba(184,134,11,.3);border-radius:10px;padding:1rem;margin:1rem 0;font-size:.85rem}
+.bank-info strong{color:var(--azul);display:block;margin-bottom:.3rem}
+.bank-info code{font-size:.8rem;letter-spacing:.05em;color:var(--tierra)}
+.stripe-btn{background:linear-gradient(135deg,#635BFF,#7C70FF);color:var(--blanco);padding:1rem 2rem;border-radius:10px;font-weight:700;font-size:1rem;border:none;cursor:pointer;width:100%;font-family:'Inter',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.5rem}
+.stripe-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(99,91,255,.4)}
+.form-note-small{font-size:.78rem;color:var(--gris);text-align:center;margin-top:.75rem}
+#booking-success{display:none;text-align:center;padding:2rem}
+#booking-success h3{font-family:'Playfair Display',serif;color:var(--azul);font-size:1.8rem;margin:1rem 0 .5rem}
+
+/* ── TESTIMONIOS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.testi-card{background:var(--blanco);border-radius:16px;padding:1.8rem;box-shadow:0 4px 20px var(--sombra)}
+.stars{color:var(--oro);font-size:1rem;margin-bottom:.75rem;letter-spacing:.1em}
+.testi-card blockquote{font-style:italic;color:var(--gris);font-size:.95rem;line-height:1.7;margin-bottom:1rem}
+.testi-author{font-weight:600;color:var(--azul);font-size:.9rem}
+.testi-origin{color:var(--gris);font-size:.8rem}
+
+/* ── CONTACTO ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:2rem}}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start}
+.contact-icon{width:44px;height:44px;background:var(--crema2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-item h4{font-weight:600;color:var(--azul);font-size:.9rem;margin-bottom:.2rem}
+.contact-item a,.contact-item p{color:var(--gris);font-size:.9rem;text-decoration:none}
+.contact-item a:hover{color:var(--oro)}
+.social-links{display:flex;gap:.75rem;margin-top:2rem;flex-wrap:wrap}
+.social-btn{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:600;transition:all .2s}
+.social-btn.ig{background:#E1306C;color:var(--blanco)}
+.social-btn.fb{background:#1877F2;color:var(--blanco)}
+.social-btn.wa{background:#25D366;color:var(--blanco)}
+.social-btn.yt{background:#FF0000;color:var(--blanco)}
+.social-btn.tri{background:#34E0A1;color:var(--texto)}
+.social-btn:hover{transform:translateY(-2px);opacity:.9}
+.map-container{border-radius:16px;overflow:hidden;height:400px;box-shadow:0 8px 30px var(--sombra)}
+.map-container iframe{width:100%;height:100%;border:none}
+
+/* ── FOOTER ── */
+footer{background:var(--azul);color:rgba(255,255,255,.7);padding:3rem 2rem;text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--blanco);margin-bottom:.5rem}
+.footer-logo span{color:var(--oro-claro)}
+footer p{font-size:.85rem;line-height:1.7;max-width:600px;margin:0 auto 1.5rem}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--oro-claro)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:2rem;padding-top:1.5rem;font-size:.8rem}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:2rem;right:2rem;background:#25D366;color:var(--blanco);width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,.5);text-decoration:none;z-index:500;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .hero h1{font-size:2.5rem}
+  section{padding:4rem 1.5rem}
+  .full-section{padding:4rem 1.5rem}
+  .tours-bg{padding:4rem 1.5rem}
+  .gastro-bg{padding:4rem 1.5rem}
+}
+</style>
+</head>
 <body>
-<nav><div class="logo">ORBIT<span style="color:#F0F4FF">AI</span></div><a href="#contacto" class="nav-cta">Solicitar Demo →</a></nav>
-<div class="hero"><div>
-<div class="badge"><div class="dot"></div>Agencia de IA · Automatizaciones · Resultados reales</div>
-<h1>Tu negocio en<br><span class="accent">piloto automático</span><br>con IA</h1>
-<p class="sub">Chatbots inteligentes, automatizaciones a medida y páginas web profesionales. Orbit AI convierte tu negocio en una máquina que trabaja 24/7.</p>
-<div class="actions"><a href="#contacto" class="btn">Quiero automatizar mi negocio →</a><a href="#servicios" class="btn2">Ver servicios</a></div>
-</div></div>
-<div class="stats">
-<div><span class="stat-num">24/7</span><div class="stat-label">Tu negocio siempre activo</div></div>
-<div><span class="stat-num">-80%</span><div class="stat-label">Tareas manuales eliminadas</div></div>
-<div><span class="stat-num">72h</span><div class="stat-label">Primer bot funcional</div></div>
-<div><span class="stat-num">100%</span><div class="stat-label">Personalizado para tu sector</div></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader"><div class="loader-text">MagicTours</div></div>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('pt')">PT</button>
+  <button class="lang-btn" onclick="setLang('it')">IT</button>
 </div>
-<section id="servicios"><div class="label">// servicios</div><h2>Lo que construimos para ti</h2><p class="desc">Soluciones de IA listas para funcionar desde el primer día.</p>
-<div class="grid">
-<div class="card"><span class="icon">🤖</span><h3>WhatsApp Bot IA</h3><p>Bot inteligente que responde clientes y cierra ventas en WhatsApp 24/7.</p><ul class="features"><li>Respuesta automática 24/7</li><li>Calificación de leads</li><li>Integración CRM</li><li>Agenda citas automáticamente</li></ul><div class="price">997€ <span>/ proyecto</span></div><br><br><a href="#contacto" class="btn" style="font-size:.9rem;padding:.7rem 1.5rem">Solicitar →</a></div>
-<div class="card"><span class="popular">MÁS VENDIDO</span><span class="icon">⚡</span><h3>Pack Automatización Completa</h3><p>Sistema completo: captación, seguimiento, facturación y atención al cliente.</p><ul class="features"><li>Bot WhatsApp + Email automation</li><li>CRM automatizado</li><li>Flujos Make.com a medida</li><li>Dashboard de métricas</li><li>Soporte 30 días incluido</li></ul><div class="price">2.497€ <span>/ proyecto</span></div><br><br><a href="#contacto" class="btn" style="font-size:.9rem;padding:.7rem 1.5rem">Solicitar →</a></div>
-<div class="card"><span class="icon">🌐</span><h3>Web Profesional + IA</h3><p>Página web de alta conversión con chat IA integrado y diseño premium.</p><ul class="features"><li>Diseño personalizado</li><li>Chat IA integrado</li><li>Captación de leads automática</li><li>SEO técnico incluido</li></ul><div class="price">1.497€ <span>/ proyecto</span></div><br><br><a href="#contacto" class="btn" style="font-size:.9rem;padding:.7rem 1.5rem">Solicitar →</a></div>
-<div class="card"><span class="icon">🧠</span><h3>Agente IA Autónomo</h3><p>Agente que aprende de tu negocio y toma decisiones sin supervisión.</p><ul class="features"><li>IA entrenada en tu sector</li><li>Decisiones autónomas</li><li>Integración con todas tus apps</li><li>Reportes automáticos</li></ul><div class="price">3.997€ <span>/ proyecto</span></div><br><br><a href="#contacto" class="btn" style="font-size:.9rem;padding:.7rem 1.5rem">Solicitar →</a></div>
-<div class="card"><span class="icon">📱</span><h3>Contenido Digital IA</h3><p>Sistema automatizado de creación y publicación de contenido viral.</p><ul class="features"><li>Vídeos con avatar IA</li><li>Guiones optimizados</li><li>Publicación automática</li><li>Análisis de rendimiento</li></ul><div class="price">797€ <span>/ mes</span></div><br><br><a href="#contacto" class="btn" style="font-size:.9rem;padding:.7rem 1.5rem">Solicitar →</a></div>
-<div class="card"><span class="icon">🔧</span><h3>Consultoría Estratégica IA</h3><p>Diagnóstico y hoja de ruta para implementar IA de forma rentable.</p><ul class="features"><li>Auditoría de procesos</li><li>Plan de automatización</li><li>ROI estimado</li><li>Sesión 90 min + informe</li></ul><div class="price">297€ <span>/ sesión</span></div><br><br><a href="#contacto" class="btn" style="font-size:.9rem;padding:.7rem 1.5rem">Solicitar →</a></div>
-</div></section>
-<section id="contacto" style="max-width:100%;background:#0F1420;border-top:1px solid #1E2535;border-bottom:1px solid #1E2535"><div style="max-width:700px;margin:0 auto">
-<div class="form-box" style="border:none;background:transparent">
-<div class="label">// contacto</div>
-<h2>Solicita tu diagnóstico <span class="accent">gratuito</span></h2>
-<p style="color:#6B7A99;margin-bottom:2rem">Respuesta personalizada en menos de 24 horas.</p>
-<form id="leadForm">
-<div class="form-grid">
-<input type="text" id="nombre" placeholder="Nombre" required>
-<input type="text" id="empresa" placeholder="Empresa / Sector">
-<input type="email" id="email" placeholder="Email" required>
-<input type="tel" id="whatsapp" placeholder="WhatsApp">
-<select id="servicio" class="full"><option value="">¿Qué necesitas?</option><option value="whatsapp-bot">WhatsApp Bot IA — 997€</option><option value="pack-completo">Pack Automatización — 2.497€</option><option value="web-ia">Web + IA — 1.497€</option><option value="agente">Agente IA — 3.997€</option><option value="contenido">Contenido Digital — 797€/mes</option><option value="consultoria">Consultoría — 297€</option><option value="otro">No sé — quiero asesoramiento</option></select>
-<textarea id="mensaje" class="full" placeholder="Cuéntanos tu negocio y qué quieres automatizar..."></textarea>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#inicio" class="nav-logo">Magic<span>Tours</span></a>
+  <div class="nav-links">
+    <a href="#monumentos" data-t="nav_monuments">Monumentos</a>
+    <a href="#tours" data-t="nav_tours">Tours</a>
+    <a href="#ricardo" data-t="nav_guide">El Guía</a>
+    <a href="#contacto" data-t="nav_contact">Contacto</a>
+    <a href="#tours" class="nav-cta" data-t="nav_book">Reservar →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" style="max-width:100%;padding:0">
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🕌 <span data-t="hero_badge">Guía Oficial de Andalucía</span></div>
+    <h1 data-t="hero_title">Descubre la <em>magia</em><br>de Córdoba</h1>
+    <p class="hero-sub" data-t="hero_sub">Tours privados exclusivos por la ciudad con más Patrimonio de la Humanidad por habitante del mundo. En 5 idiomas.</p>
+    <div class="hero-actions">
+      <a href="#tours" class="btn-gold" data-t="hero_cta1">Ver mis tours</a>
+      <a href="#contacto" class="btn-outline" data-t="hero_cta2">Contactar</a>
+    </div>
+  </div>
+  <div class="hero-scroll">↓ Scroll</div>
 </div>
-<button type="submit" class="btn" style="width:100%;padding:1rem;font-size:1rem">Solicitar diagnóstico gratuito →</button>
-<p class="note">✓ Sin compromiso · ✓ Respuesta en 24h · ✓ 100% confidencial</p>
-</form>
-<div id="ok" style="display:none;padding:2rem;text-align:center"><div style="font-size:3rem;margin-bottom:1rem">✅</div><h3>¡Solicitud recibida!</h3><p style="color:#6B7A99;margin-top:.5rem">Te contactamos en menos de 24h.</p></div>
-</div></div></section>
-<section id="faq"><div class="label">// faq</div><h2>Preguntas frecuentes</h2>
-<div class="faq-list">
-<div class="faq-item"><div class="faq-q">¿Cuánto tarda en estar listo mi bot? <span class="icon-plus">+</span></div><div class="faq-a">El primer bot funcional está listo en 72 horas. Proyectos más complejos tardan entre 7 y 14 días.</div></div>
-<div class="faq-item"><div class="faq-q">¿Necesito conocimientos técnicos? <span class="icon-plus">+</span></div><div class="faq-a">No. Nos encargamos de todo. Tú solo nos cuentas cómo funciona tu negocio.</div></div>
-<div class="faq-item"><div class="faq-q">¿Con qué herramientas trabajáis? <span class="icon-plus">+</span></div><div class="faq-a">Claude AI, Make.com, HeyGen, ElevenLabs, WhatsApp Business API y tecnologías propias.</div></div>
-<div class="faq-item"><div class="faq-q">¿Puedo empezar con algo pequeño? <span class="icon-plus">+</span></div><div class="faq-a">Sí. La Consultoría por 297€ es el punto de entrada ideal para empezar sin riesgo.</div></div>
-</div></section>
-<footer><div class="logo" style="font-size:1.3rem;margin-bottom:1rem">ORBIT<span style="color:#F0F4FF">AI</span></div><p>Agencia de Inteligencia Artificial · Automatizaciones · Bots · Webs</p><div class="footer-links"><a href="https://omnifl.github.io/orbit-ai-agency" target="_blank">Web principal</a><a href="https://omnifl.github.io/orbit-catalogo/" target="_blank">Catálogo</a><a href="mailto:bigtecgigalnvest@gmail.com">bigtecgigalnvest@gmail.com</a></div><p style="margin-top:2rem;font-size:.8rem">© 2026 Orbit AI</p></footer>
-<a href="https://wa.me/?text=Hola%2C%20me%20interesa%20Orbit%20AI" class="wa" target="_blank">💬</a>
-<div class="notif" id="notif"><strong>🔔 Nuevo interés</strong><p id="notif-text">Alguien de Madrid preguntó por WhatsApp Bot</p></div>
+</section>
+
+<!-- MONUMENTOS UNESCO -->
+<section id="monumentos">
+  <div class="section-eyebrow" data-t="mon_eyebrow">Patrimonio de la Humanidad</div>
+  <h2 class="section-title" data-t="mon_title">Los 5 tesoros de Córdoba</h2>
+  <p class="section-desc" data-t="mon_desc">Córdoba alberga monumentos declarados Patrimonio Mundial por la UNESCO. Te los muestro como nadie más puede hacerlo.</p>
+
+  <div class="monuments-grid">
+    <div class="monument-card featured">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Mezquita-Catedral de Córdoba" loading="lazy">
+      <div class="monument-overlay">
+        <span class="monument-badge">UNESCO</span>
+        <h3 data-t="mon1_title">Mezquita-Catedral</h3>
+        <p data-t="mon1_desc">La joya del Islam occidental. 1.200 años de historia en un solo edificio fascinante.</p>
+      </div>
+    </div>
+
+    <div class="monument-card">
+      <img src="https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=600&q=80" alt="Judería de Córdoba" loading="lazy">
+      <div class="monument-overlay">
+        <span class="monument-badge">UNESCO</span>
+        <h3 data-t="mon2_title">Judería</h3>
+        <p data-t="mon2_desc">El barrio judío medieval mejor conservado de España.</p>
+      </div>
+    </div>
+
+    <div class="monument-card">
+      <img src="https://images.unsplash.com/photo-1591017403997-bfff66af07b7?w=600&q=80" alt="Alcázar de los Reyes Cristianos" loading="lazy">
+      <div class="monument-overlay">
+        <h3 data-t="mon3_title">Alcázar de los Reyes Cristianos</h3>
+        <p data-t="mon3_desc">Fortaleza medieval con jardines y mosaicos romanos únicos.</p>
+      </div>
+    </div>
+
+    <div class="monument-card">
+      <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80" alt="Medina Azahara" loading="lazy">
+      <div class="monument-overlay">
+        <span class="monument-badge">UNESCO</span>
+        <h3 data-t="mon4_title">Medina Azahara</h3>
+        <p data-t="mon4_desc">La ciudad-palacio del Califato de Córdoba. Un lujo arqueológico extraordinario.</p>
+      </div>
+    </div>
+
+    <div class="monument-card">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Patios de Córdoba" loading="lazy">
+      <div class="monument-overlay">
+        <span class="monument-badge">UNESCO</span>
+        <h3 data-t="mon5_title">Patios de Córdoba</h3>
+        <p data-t="mon5_desc">Jardines íntimos llenos de flores y tradición. Únicos en el mundo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOURS -->
+<div class="tours-bg" id="tours">
+<div class="tours-inner">
+  <div class="section-eyebrow" style="color:var(--oro-claro)" data-t="tours_eyebrow">Tours Privados Exclusivos</div>
+  <h2 class="section-title" style="color:var(--blanco)" data-t="tours_title">Elige tu experiencia</h2>
+  <p class="section-desc" style="color:rgba(255,255,255,.65)" data-t="tours_desc">Todos los tours son privados, en tu idioma, adaptados a tu ritmo. Accesibles para familias y personas con movilidad reducida.</p>
+
+  <div class="tours-grid">
+
+    <div class="tour-card tour-featured">
+      <span class="tour-featured-badge" data-t="featured_badge">⭐ Más popular</span>
+      <span class="tour-icon">🕌</span>
+      <h3 data-t="t1_name">Mezquita-Catedral UNESCO</h3>
+      <div class="tour-duration" data-t="t1_dur">1 hora · Tour privado</div>
+      <p data-t="t1_desc">Visita privada a la joya del Islam occidental. Descubre los secretos de sus 856 columnas, el mihrab y la catedral dentro de la mezquita.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">100€ <small data-t="per_group">/grupo</small></div><div class="tour-note" data-t="t1_note">Tickets no incluidos — gestión disponible</div></div>
+        <button class="btn-book" onclick="openBooking('Mezquita-Catedral UNESCO — 100€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <span class="tour-icon">✡️</span>
+      <h3 data-t="t2_name">Judería UNESCO</h3>
+      <div class="tour-duration" data-t="t2_dur">1 hora · Tour privado</div>
+      <p data-t="t2_desc">El barrio judío medieval y la sinagoga del siglo XIV. Historia sefardí viva en cada callejuela.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">80€ <small data-t="per_group">/grupo</small></div><div class="tour-note" data-t="t2_note">Sinagoga incluida</div></div>
+        <button class="btn-book" onclick="openBooking('Judería UNESCO — 80€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <span class="tour-icon">🏰</span>
+      <h3 data-t="t3_name">Alcázar de los Reyes Cristianos</h3>
+      <div class="tour-duration" data-t="t3_dur">1 hora · Tour privado</div>
+      <p data-t="t3_desc">Fortaleza medieval, jardines mágicos y mosaicos romanos. El palacio donde Colón presentó sus planes a los Reyes Católicos.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">80€ <small data-t="per_group">/grupo</small></div><div class="tour-note" data-t="t3_note">Tickets no incluidos — gestión disponible</div></div>
+        <button class="btn-book" onclick="openBooking('Alcázar — 80€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <span class="tour-icon">🕌✡️</span>
+      <h3 data-t="t4_name">Mezquita + Judería</h3>
+      <div class="tour-duration" data-t="t4_dur">2 horas · Tour privado</div>
+      <p data-t="t4_desc">Las dos joyas UNESCO en una sola visita. El tour más completo y equilibrado de Córdoba.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">180€ <small data-t="per_group">/grupo</small></div></div>
+        <button class="btn-book" onclick="openBooking('Mezquita + Judería — 180€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card tour-featured">
+      <span class="tour-featured-badge" data-t="complete_badge">🏆 Tour completo</span>
+      <span class="tour-icon">🕌✡️🏰</span>
+      <h3 data-t="t5_name">Mezquita + Judería + Alcázar</h3>
+      <div class="tour-duration" data-t="t5_dur">3 horas · Tour privado</div>
+      <p data-t="t5_desc">La experiencia definitiva de Córdoba. Los tres monumentos históricos en un recorrido exclusivo e inolvidable.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">260€ <small data-t="per_group">/grupo</small></div></div>
+        <button class="btn-book" onclick="openBooking('Tour Completo Mezquita+Judería+Alcázar — 260€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <span class="tour-icon">🌺</span>
+      <h3 data-t="t6_name">Tours de Patios UNESCO</h3>
+      <div class="tour-duration" data-t="t6_dur">1-2 horas · Tour privado</div>
+      <p data-t="t6_desc">Los patios floridos más famosos del mundo. Un espectáculo de colores y aromas único.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">100€ <small data-t="per_group">/grupo</small></div><div class="tour-note" data-t="t6_note">Tickets opcionales según temporada</div></div>
+        <button class="btn-book" onclick="openBooking('Tour de Patios — 100€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <span class="tour-icon">🏛️</span>
+      <h3 data-t="t7_name">Medina Azahara UNESCO</h3>
+      <div class="tour-duration" data-t="t7_dur">3 horas · Tour privado</div>
+      <p data-t="t7_desc">La ciudad-palacio del Califa Abd al-Rahman III. Un viaje al esplendor del Califato de Córdoba.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">200€ <small data-t="per_group">/grupo</small></div><div class="tour-note" data-t="t7_note">Transporte no incluido</div></div>
+        <button class="btn-book" onclick="openBooking('Medina Azahara — 200€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <span class="tour-icon">🦶</span>
+      <h3 data-t="t8_name">Tour Panorámico a pie</h3>
+      <div class="tour-duration" data-t="t8_dur">2 horas · Tour privado</div>
+      <p data-t="t8_desc">Lo mejor de Córdoba en un paseo memorable. El puente romano, la Calleja de las Flores, el casco histórico.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">150€ <small data-t="per_group">/grupo</small></div></div>
+        <button class="btn-book" onclick="openBooking('Tour Panorámico — 150€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <span class="tour-icon">🍷</span>
+      <h3 data-t="t9_name">Tour Gastronómico</h3>
+      <div class="tour-duration" data-t="t9_dur">2 horas · Tour privado</div>
+      <p data-t="t9_desc">Visita a 3-4 tabernas tradicionales de Córdoba. Salmorejo, flamenquín, vinos de Montilla-Moriles. Consumición no incluida.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price">100€ <small data-t="per_group">/grupo</small></div><div class="tour-note" data-t="t9_note">Consumición no incluida</div></div>
+        <button class="btn-book" onclick="openBooking('Tour Gastronómico — 100€')" data-t="book_btn">Reservar</button>
+      </div>
+    </div>
+
+    <div class="tour-card" style="border-style:dashed;border-color:rgba(212,168,67,.4)">
+      <span class="tour-icon">✏️</span>
+      <h3 data-t="t10_name">Tour a la Carta</h3>
+      <div class="tour-duration" data-t="t10_dur">Duración flexible · Tour privado</div>
+      <p data-t="t10_desc">Diseña tu propio recorrido: Palacio de Viana, Museo Arqueológico, Casa de Sefarad, y mucho más. Precio según itinerario.</p>
+      <div class="tour-price-row">
+        <div><div class="tour-price" style="font-size:1.4rem" data-t="t10_price">A consultar</div></div>
+        <button class="btn-book" onclick="openBooking('Tour a la Carta — precio personalizado')" data-t="book_btn">Solicitar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- RICARDO -->
+<section id="ricardo">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e946?w=600&q=80" alt="Ricardo Bon Pinilla - Guía Oficial" class="about-img">
+      <div class="about-accent">
+        <strong>+10 años</strong>
+        de experiencia como guía oficial en Córdoba
+      </div>
+    </div>
+    <div>
+      <div class="section-eyebrow" data-t="about_eyebrow">Tu guía</div>
+      <h2 class="section-title" data-t="about_title">Ricardo Bon Pinilla</h2>
+      <p style="color:var(--gris);line-height:1.8;margin-bottom:1rem;font-size:1rem" data-t="about_bio1">Nativo de Córdoba y de Toulouse (Francia), he vivido también en Canadá y Brasil. Con más de 10 años como guía oficial, mi pasión es compartir la historia y la cultura de esta ciudad única contigo.</p>
+      <p style="color:var(--gris);line-height:1.8;margin-bottom:1.5rem;font-size:1rem" data-t="about_bio2">Adaptaré el recorrido a tus intereses: historia islámica, romana, cristiana o judío-sefardí. También puedo ayudarte con el transporte para llegar a Córdoba y recomendaciones de restaurantes.</p>
+      <div class="credentials">
+        <div class="credential" data-t="cred1">Guía Oficial de Andalucía</div>
+        <div class="credential" data-t="cred2">Guía Oficial de la Mezquita-Catedral</div>
+        <div class="credential" data-t="cred3">Tours accesibles para familias y personas con movilidad reducida</div>
+        <div class="credential" data-t="cred4">Especialista en historia islámica, romana, cristiana y sefardí</div>
+      </div>
+      <p style="font-weight:600;color:var(--azul);margin-bottom:.5rem;font-size:.9rem" data-t="langs_label">IDIOMAS</p>
+      <div class="langs-row">
+        <span class="lang-tag">🇪🇸 Español</span>
+        <span class="lang-tag">🇬🇧 English</span>
+        <span class="lang-tag">🇫🇷 Français (natif)</span>
+        <span class="lang-tag">🇧🇷 Português</span>
+        <span class="lang-tag">🇮🇹 Italiano</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GASTRONOMÍA -->
+<div class="gastro-bg" id="gastronomia">
+<div class="gastro-inner">
+  <div class="section-eyebrow" style="color:rgba(255,255,255,.6)" data-t="gastro_eyebrow">Tour Gastronómico</div>
+  <h2 class="section-title" style="color:var(--blanco)" data-t="gastro_title">Saborea Córdoba</h2>
+  <p class="section-desc" style="color:rgba(255,255,255,.7)" data-t="gastro_desc">Visita 3-4 tabernas tradicionales del centro histórico. Degusta la gastronomía cordobesa auténtica con tu guía experto.</p>
+  <div class="tabernas-grid">
+    <div class="taberna-card">
+      <div class="taberna-icon">🥗</div>
+      <h4 data-t="tab1_name">Salmorejo cordobés</h4>
+      <p data-t="tab1_desc">El plato estrella de Córdoba. Crema de tomate con jamón y huevo. Irresistible.</p>
+    </div>
+    <div class="taberna-card">
+      <div class="taberna-icon">🥩</div>
+      <h4 data-t="tab2_name">Flamenquín</h4>
+      <p data-t="tab2_desc">El filete empanado cordobés relleno de jamón. Un clásico imprescindible.</p>
+    </div>
+    <div class="taberna-card">
+      <div class="taberna-icon">🍷</div>
+      <h4 data-t="tab3_name">Vinos de Montilla-Moriles</h4>
+      <p data-t="tab3_desc">Los vinos únicos de la provincia, perfectos para acompañar la gastronomía local.</p>
+    </div>
+    <div class="taberna-card">
+      <div class="taberna-icon">🫒</div>
+      <h4 data-t="tab4_name">Tapas tradicionales</h4>
+      <p data-t="tab4_desc">La ruta de tapas más auténtica de Córdoba con tu guía oficial.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:3rem">
+    <button class="btn-gold" onclick="openBooking('Tour Gastronómico — 100€')" data-t="gastro_cta">Reservar Tour Gastronómico — 100€</button>
+  </div>
+</div>
+</div>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="section-eyebrow" data-t="testi_eyebrow">Lo que dicen</div>
+  <h2 class="section-title" data-t="testi_title">Experiencias reales</h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote data-t="testi1">"Ricardo nos hizo vivir Córdoba de una manera completamente diferente. Su conocimiento de la historia árabe es fascinante. ¡El mejor guía que hemos tenido!"</blockquote>
+      <div class="testi-author">Sophie & Paul M.</div>
+      <div class="testi-origin">🇫🇷 París, Francia</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote data-t="testi2">"An unforgettable experience. Ricardo speaks perfect English and his passion for Córdoba's history is contagious. We did the complete 3-hour tour — absolutely worth it."</blockquote>
+      <div class="testi-author">John & Mary K.</div>
+      <div class="testi-origin">🇬🇧 London, UK</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote data-t="testi3">"Fizemos o tour da Medina Azahara e foi incrível. Ricardo explicou tudo com paixão e detalhe. Recomendo a todos os visitantes de Córdoba!"</blockquote>
+      <div class="testi-author">Ana & Carlos S.</div>
+      <div class="testi-origin">🇧🇷 São Paulo, Brasil</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="background:var(--crema2);max-width:100%;border-top:1px solid rgba(139,58,26,.1);border-bottom:1px solid rgba(139,58,26,.1)">
+<div style="max-width:1200px;margin:0 auto;padding:0">
+  <div class="section-eyebrow" data-t="contact_eyebrow">Contacto</div>
+  <h2 class="section-title" data-t="contact_title">¿Hablamos?</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4 data-t="c_phone">Teléfono / WhatsApp</h4>
+          <a href="tel:+34651369426">+34 651 369 426</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:ricardo.bon@hotmail.fr">ricardo.bon@hotmail.fr</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4 data-t="c_location">Ubicación</h4>
+          <p>Córdoba, Andalucía, España</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <h4 data-t="c_hours">Disponibilidad</h4>
+          <p data-t="c_hours_val">Todos los días. Tours a cualquier hora.</p>
+        </div>
+      </div>
+      <div>
+        <p style="font-weight:600;color:var(--azul);font-size:.85rem;margin-bottom:.75rem;letter-spacing:.05em;text-transform:uppercase" data-t="follow_us">Síguenos</p>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" class="social-btn ig">📸 Instagram</a>
+          <a href="https://facebook.com" target="_blank" class="social-btn fb">👍 Facebook</a>
+          <a href="https://wa.me/34651369426" target="_blank" class="social-btn wa">💬 WhatsApp</a>
+          <a href="https://tripadvisor.com" target="_blank" class="social-btn tri">⭐ TripAdvisor</a>
+        </div>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25308.614!2d-4.7793!3d37.8882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d00b0e00000001%3A0x9a32e57f00000001!2sMezquita-Catedral%20de%20C%C3%B3rdoba!5e0!3m2!1ses!2ses!4v1" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Magic<span>Tours</span> Córdoba</div>
+  <p data-t="footer_desc">Tours privados exclusivos por Córdoba con Ricardo Bon Pinilla, guía oficial de Andalucía y de la Mezquita-Catedral. Más de 10 años compartiendo la magia de Córdoba.</p>
+  <div class="footer-links">
+    <a href="#monumentos" data-t="nav_monuments">Monumentos</a>
+    <a href="#tours" data-t="nav_tours">Tours</a>
+    <a href="#ricardo" data-t="nav_guide">El Guía</a>
+    <a href="#contacto" data-t="nav_contact">Contacto</a>
+    <a href="mailto:ricardo.bon@hotmail.fr">ricardo.bon@hotmail.fr</a>
+    <a href="tel:+34651369426">+34 651 369 426</a>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MagicTours Córdoba · Ricardo Bon Pinilla · Guía Oficial de Andalucía</p>
+    <p style="margin-top:.5rem;font-size:.75rem;color:rgba(255,255,255,.4)" data-t="footer_legal">Todos los precios incluyen IVA · Tours accesibles para personas con movilidad reducida</p>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/34651369426?text=Hola%20Ricardo%2C%20me%20interesa%20reservar%20un%20tour%20en%20C%C3%B3rdoba" class="wa-float" target="_blank" title="WhatsApp">💬</a>
+
+<!-- MODAL RESERVA -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeBooking(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 data-t="modal_title">Reservar Tour</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div id="booking-form-content">
+      <p style="color:var(--gris);font-size:.9rem;margin-bottom:1.5rem"><strong id="selected-tour"></strong></p>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-t="f_name">Nombre completo *</label>
+          <input type="text" id="f-nombre" required>
+        </div>
+        <div class="form-group">
+          <label data-t="f_people">Número de personas *</label>
+          <input type="number" id="f-personas" min="1" max="20" value="2">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-t="f_date">Fecha deseada *</label>
+          <input type="date" id="f-fecha" required>
+        </div>
+        <div class="form-group">
+          <label data-t="f_time">Hora preferida</label>
+          <select id="f-hora">
+            <option>09:00</option><option>10:00</option><option>11:00</option>
+            <option>12:00</option><option>16:00</option><option>17:00</option>
+            <option>18:00</option><option>19:00</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="f-email" required>
+        </div>
+        <div class="form-group">
+          <label data-t="f_phone">WhatsApp / Teléfono</label>
+          <input type="tel" id="f-tel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-t="f_lang">Idioma preferido</label>
+        <select id="f-idioma">
+          <option>Español</option>
+          <option>English</option>
+          <option>Français</option>
+          <option>Português</option>
+          <option>Italiano</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-t="f_notes">Notas o peticiones especiales</label>
+        <textarea id="f-notas" placeholder="Accesibilidad, niños, intereses especiales..."></textarea>
+      </div>
+
+      <p style="font-weight:600;color:var(--azul);font-size:.9rem;margin-bottom:1rem" data-t="pay_method">Método de pago</p>
+      <div class="payment-methods">
+        <div class="payment-opt selected" onclick="selectPayment(this,'stripe')">
+          <div class="pay-icon">💳</div>
+          <span data-t="pay_card">Tarjeta online</span>
+        </div>
+        <div class="payment-opt" onclick="selectPayment(this,'transfer')">
+          <div class="pay-icon">🏦</div>
+          <span data-t="pay_transfer">Transferencia</span>
+        </div>
+        <div class="payment-opt" onclick="selectPayment(this,'presencial')">
+          <div class="pay-icon">💶</div>
+          <span data-t="pay_cash">En persona</span>
+        </div>
+      </div>
+
+      <div id="stripe-section">
+        <button class="stripe-btn" onclick="processPayment()">
+          🔒 <span data-t="pay_secure">Pago seguro con Stripe →</span>
+        </button>
+      </div>
+
+      <div id="transfer-section" style="display:none">
+        <div class="bank-info">
+          <strong data-t="bank_title">Datos para transferencia bancaria</strong>
+          <p>Titular: Ricardo Bon Pinilla</p>
+          <p>IBAN: <code>ES10 0182 2104 4002 0171 4341</code></p>
+          <p style="margin-top:.5rem;color:var(--gris);font-size:.8rem" data-t="bank_note">Incluye en el concepto tu nombre y fecha del tour</p>
+        </div>
+        <button class="btn-gold" onclick="submitBooking()" style="width:100%;padding:1rem;font-size:1rem" data-t="confirm_transfer">Confirmar reserva por transferencia</button>
+      </div>
+
+      <div id="presencial-section" style="display:none">
+        <p style="color:var(--gris);font-size:.9rem;margin:.5rem 0 1rem" data-t="cash_note">Pagarás el importe al inicio del tour en efectivo o bizum.</p>
+        <button class="btn-gold" onclick="submitBooking()" style="width:100%;padding:1rem;font-size:1rem" data-t="confirm_cash">Confirmar reserva</button>
+      </div>
+
+      <p class="form-note-small" data-t="modal_note">✓ Sin gastos adicionales · ✓ Confirmación en menos de 24h · ✓ Cancelación flexible</p>
+    </div>
+    <div id="booking-success">
+      <div style="font-size:3rem">🎉</div>
+      <h3 data-t="success_title">¡Solicitud enviada!</h3>
+      <p style="color:var(--gris);margin-top:.5rem" data-t="success_desc">Ricardo te contactará en menos de 24 horas para confirmar tu tour. ¡Nos vemos en Córdoba!</p>
+      <br>
+      <a href="https://wa.me/34651369426" class="btn-gold" target="_blank" data-t="success_wa">Confirmar por WhatsApp →</a>
+    </div>
+  </div>
+</div>
+
 <script>
-document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>q.parentElement.classList.toggle('open'))});
-document.getElementById('leadForm').addEventListener('submit',function(e){e.preventDefault();const btn=this.querySelector('button');btn.textContent='Enviando...';btn.disabled=true;const d={nombre:document.getElementById('nombre').value,empresa:document.getElementById('empresa').value,email:document.getElementById('email').value,whatsapp:document.getElementById('whatsapp').value,servicio:document.getElementById('servicio').value,mensaje:document.getElementById('mensaje').value,fecha:new Date().toISOString()};fetch('TU_WEBHOOK_MAKE_AQUI',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).catch(()=>{});setTimeout(()=>{document.getElementById('leadForm').style.display='none';document.getElementById('ok').style.display='block'},800)});
-const c=['Barcelona','Madrid','Valencia','Málaga','Sevilla','México DF','Buenos Aires'];const s=['WhatsApp Bot','Pack Completo','Web + IA','Agente Autónomo'];function showN(){const n=document.getElementById('notif');document.getElementById('notif-text').textContent='Alguien de '+c[Math.floor(Math.random()*c.length)]+' preguntó por '+s[Math.floor(Math.random()*s.length)];n.style.display='block';setTimeout(()=>n.style.display='none',4000)}setTimeout(()=>showN(),8000);setInterval(()=>showN(),45000);
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})})});
+// ── TRADUCCIONES ──────────────────────────────────
+const T = {
+  es: {
+    nav_monuments:'Monumentos',nav_tours:'Tours',nav_guide:'El Guía',nav_contact:'Contacto',nav_book:'Reservar →',
+    hero_badge:'Guía Oficial de Andalucía',hero_title:'Descubre la magia\nde Córdoba',hero_sub:'Tours privados exclusivos por la ciudad con más Patrimonio de la Humanidad del mundo. En 5 idiomas.',hero_cta1:'Ver mis tours',hero_cta2:'Contactar',
+    mon_eyebrow:'Patrimonio de la Humanidad',mon_title:'Los 5 tesoros de Córdoba',mon_desc:'Córdoba alberga monumentos declarados Patrimonio Mundial por la UNESCO. Te los muestro como nadie más puede hacerlo.',
+    mon1_title:'Mezquita-Catedral',mon1_desc:'La joya del Islam occidental. 1.200 años de historia en un solo edificio fascinante.',
+    mon2_title:'Judería',mon2_desc:'El barrio judío medieval mejor conservado de España.',
+    mon3_title:'Alcázar de los Reyes Cristianos',mon3_desc:'Fortaleza medieval con jardines y mosaicos romanos únicos.',
+    mon4_title:'Medina Azahara',mon4_desc:'La ciudad-palacio del Califato de Córdoba. Un lujo arqueológico extraordinario.',
+    mon5_title:'Patios de Córdoba',mon5_desc:'Jardines íntimos llenos de flores y tradición. Únicos en el mundo.',
+    tours_eyebrow:'Tours Privados Exclusivos',tours_title:'Elige tu experiencia',tours_desc:'Todos los tours son privados, en tu idioma, adaptados a tu ritmo.',
+    featured_badge:'⭐ Más popular',complete_badge:'🏆 Tour completo',per_group:'/grupo',book_btn:'Reservar',
+    t1_name:'Mezquita-Catedral UNESCO',t1_dur:'1 hora · Tour privado',t1_desc:'Visita privada a la joya del Islam occidental. Descubre los secretos de sus 856 columnas.',t1_note:'Tickets no incluidos — gestión disponible',
+    t2_name:'Judería UNESCO',t2_dur:'1 hora · Tour privado',t2_desc:'El barrio judío medieval y la sinagoga del siglo XIV.',t2_note:'Sinagoga incluida',
+    t3_name:'Alcázar',t3_dur:'1 hora · Tour privado',t3_desc:'Fortaleza medieval, jardines mágicos y mosaicos romanos.',t3_note:'Tickets no incluidos',
+    t4_name:'Mezquita + Judería',t4_dur:'2 horas · Tour privado',t4_desc:'Las dos joyas UNESCO en una sola visita.',
+    t5_name:'Tour Completo',t5_dur:'3 horas · Tour privado',t5_desc:'La experiencia definitiva de Córdoba.',
+    t6_name:'Tour de Patios UNESCO',t6_dur:'1-2 horas',t6_desc:'Los patios floridos más famosos del mundo.',t6_note:'Tickets según temporada',
+    t7_name:'Medina Azahara UNESCO',t7_dur:'3 horas',t7_desc:'La ciudad-palacio del Califa Abd al-Rahman III.',t7_note:'Transporte no incluido',
+    t8_name:'Tour Panorámico a pie',t8_dur:'2 horas',t8_desc:'Lo mejor de Córdoba en un paseo memorable.',
+    t9_name:'Tour Gastronómico',t9_dur:'2 horas',t9_desc:'3-4 tabernas tradicionales. Salmorejo, flamenquín, vinos.',t9_note:'Consumición no incluida',
+    t10_name:'Tour a la Carta',t10_dur:'Duración flexible',t10_desc:'Diseña tu propio recorrido.',t10_price:'A consultar',
+    about_eyebrow:'Tu guía',about_title:'Ricardo Bon Pinilla',
+    about_bio1:'Nativo de Córdoba y de Toulouse (Francia), he vivido también en Canadá y Brasil. Con más de 10 años como guía oficial, mi pasión es compartir la historia y la cultura de esta ciudad única.',
+    about_bio2:'Adaptaré el recorrido a tus intereses: historia islámica, romana, cristiana o judío-sefardí.',
+    cred1:'Guía Oficial de Andalucía',cred2:'Guía Oficial de la Mezquita-Catedral',cred3:'Tours accesibles para familias y personas con movilidad reducida',cred4:'Especialista en historia islámica, romana, cristiana y sefardí',
+    langs_label:'IDIOMAS',
+    gastro_eyebrow:'Tour Gastronómico',gastro_title:'Saborea Córdoba',gastro_desc:'Visita 3-4 tabernas tradicionales del centro histórico.',gastro_cta:'Reservar Tour Gastronómico — 100€',
+    tab1_name:'Salmorejo cordobés',tab1_desc:'El plato estrella de Córdoba.',tab2_name:'Flamenquín',tab2_desc:'El filete empanado cordobés.',tab3_name:'Vinos de Montilla-Moriles',tab3_desc:'Los vinos únicos de la provincia.',tab4_name:'Tapas tradicionales',tab4_desc:'La ruta más auténtica de Córdoba.',
+    testi_eyebrow:'Lo que dicen',testi_title:'Experiencias reales',
+    testi1:'"Ricardo nos hizo vivir Córdoba de una manera completamente diferente. ¡El mejor guía que hemos tenido!"',
+    testi2:'"An unforgettable experience. Ricardo\'s passion for Córdoba\'s history is contagious."',
+    testi3:'"Fizemos o tour da Medina Azahara e foi incrível. Ricardo explicou tudo com paixão."',
+    contact_eyebrow:'Contacto',contact_title:'¿Hablamos?',c_phone:'Teléfono / WhatsApp',c_location:'Ubicación',c_hours:'Disponibilidad',c_hours_val:'Todos los días. Tours a cualquier hora.',follow_us:'Síguenos',
+    footer_desc:'Tours privados exclusivos por Córdoba con Ricardo Bon Pinilla, guía oficial de Andalucía y de la Mezquita-Catedral.',footer_legal:'Todos los precios incluyen IVA · Tours accesibles',
+    modal_title:'Reservar Tour',f_name:'Nombre completo *',f_people:'Número de personas *',f_date:'Fecha deseada *',f_time:'Hora preferida',f_phone:'WhatsApp / Teléfono',f_lang:'Idioma preferido',f_notes:'Notas especiales',
+    pay_method:'Método de pago',pay_card:'Tarjeta online',pay_transfer:'Transferencia',pay_cash:'En persona',pay_secure:'Pago seguro con Stripe →',
+    bank_title:'Datos bancarios',bank_note:'Incluye tu nombre y fecha en el concepto',confirm_transfer:'Confirmar por transferencia',confirm_cash:'Confirmar reserva',cash_note:'Pagarás al inicio del tour.',
+    modal_note:'✓ Sin gastos adicionales · ✓ Confirmación en 24h',success_title:'¡Solicitud enviada!',success_desc:'Ricardo te contactará en menos de 24 horas.',success_wa:'Confirmar por WhatsApp →'
+  },
+  en:{
+    nav_monuments:'Monuments',nav_tours:'Tours',nav_guide:'The Guide',nav_contact:'Contact',nav_book:'Book now →',
+    hero_badge:'Official Guide of Andalusia',hero_title:'Discover the magic\nof Córdoba',hero_sub:'Exclusive private tours of the world\'s most UNESCO World Heritage city. In 5 languages.',hero_cta1:'See my tours',hero_cta2:'Contact me',
+    mon_eyebrow:'World Heritage Sites',mon_title:'The 5 treasures of Córdoba',mon_desc:'Córdoba is home to UNESCO World Heritage monuments. I\'ll show them to you like no one else can.',
+    mon1_title:'Mosque-Cathedral',mon1_desc:'The jewel of Western Islam. 1,200 years of history in one fascinating building.',
+    mon2_title:'Jewish Quarter',mon2_desc:'The best-preserved medieval Jewish quarter in Spain.',
+    mon3_title:'Alcázar de los Reyes Cristianos',mon3_desc:'Medieval fortress with unique gardens and Roman mosaics.',
+    mon4_title:'Medina Azahara',mon4_desc:'The palace-city of the Córdoba Caliphate. An extraordinary archaeological treasure.',
+    mon5_title:'Córdoba Patios',mon5_desc:'Intimate flower-filled gardens. Unique in the world.',
+    tours_eyebrow:'Exclusive Private Tours',tours_title:'Choose your experience',tours_desc:'All tours are private, in your language, adapted to your pace.',
+    featured_badge:'⭐ Most popular',complete_badge:'🏆 Complete tour',per_group:'/group',book_btn:'Book',
+    t1_name:'Mosque-Cathedral UNESCO',t1_dur:'1 hour · Private tour',t1_desc:'Private visit to the jewel of Western Islam. Discover the secrets of its 856 columns.',t1_note:'Tickets not included — management available',
+    t2_name:'Jewish Quarter UNESCO',t2_dur:'1 hour · Private tour',t2_desc:'The medieval Jewish quarter and 14th-century synagogue.',t2_note:'Synagogue included',
+    t3_name:'Alcázar',t3_dur:'1 hour · Private tour',t3_desc:'Medieval fortress, magical gardens and Roman mosaics.',t3_note:'Tickets not included',
+    t4_name:'Mosque + Jewish Quarter',t4_dur:'2 hours · Private tour',t4_desc:'Both UNESCO gems in one visit.',
+    t5_name:'Complete Tour',t5_dur:'3 hours · Private tour',t5_desc:'The ultimate Córdoba experience.',
+    t6_name:'Córdoba Patios UNESCO',t6_dur:'1-2 hours',t6_desc:'The most famous flower patios in the world.',t6_note:'Tickets optional by season',
+    t7_name:'Medina Azahara UNESCO',t7_dur:'3 hours',t7_desc:'The palace-city of Caliph Abd al-Rahman III.',t7_note:'Transport not included',
+    t8_name:'Panoramic Walking Tour',t8_dur:'2 hours',t8_desc:'The best of Córdoba in a memorable walk.',
+    t9_name:'Gastronomic Tour',t9_dur:'2 hours',t9_desc:'3-4 traditional taverns. Salmorejo, flamenquín, wines.',t9_note:'Food/drinks not included',
+    t10_name:'Tailor-Made Tour',t10_dur:'Flexible duration',t10_desc:'Design your own route.',t10_price:'On request',
+    about_eyebrow:'Your guide',about_title:'Ricardo Bon Pinilla',
+    about_bio1:'Native of Córdoba and Toulouse (France), I have also lived in Canada and Brazil. With over 10 years as an official guide, my passion is sharing the history and culture of this unique city.',
+    about_bio2:'I will adapt the tour to your interests: Islamic, Roman, Christian or Sephardic Jewish history.',
+    cred1:'Official Guide of Andalusia',cred2:'Official Guide of the Mosque-Cathedral',cred3:'Accessible tours for families and people with reduced mobility',cred4:'Specialist in Islamic, Roman, Christian and Sephardic history',
+    langs_label:'LANGUAGES',
+    gastro_eyebrow:'Gastronomic Tour',gastro_title:'Taste Córdoba',gastro_desc:'Visit 3-4 traditional taverns in the historic centre.',gastro_cta:'Book Gastronomic Tour — 100€',
+    tab1_name:'Córdoba salmorejo',tab1_desc:'The star dish of Córdoba.',tab2_name:'Flamenquín',tab2_desc:'The classic Córdoba breaded fillet.',tab3_name:'Montilla-Moriles wines',tab3_desc:'The unique wines of the province.',tab4_name:'Traditional tapas',tab4_desc:'The most authentic tapas route in Córdoba.',
+    testi_eyebrow:'Reviews',testi_title:'Real experiences',
+    testi1:'"Ricardo showed us Córdoba in a completely different way. The best guide we\'ve ever had!"',
+    testi2:'"An unforgettable experience. Ricardo\'s passion for Córdoba\'s history is contagious. Absolutely worth it."',
+    testi3:'"We did the Medina Azahara tour and it was incredible. Ricardo explained everything with passion."',
+    contact_eyebrow:'Contact',contact_title:'Let\'s talk',c_phone:'Phone / WhatsApp',c_location:'Location',c_hours:'Availability',c_hours_val:'Every day. Tours at any time.',follow_us:'Follow us',
+    footer_desc:'Exclusive private tours of Córdoba with Ricardo Bon Pinilla, official guide of Andalusia and the Mosque-Cathedral.',footer_legal:'All prices include VAT · Accessible tours',
+    modal_title:'Book a Tour',f_name:'Full name *',f_people:'Number of people *',f_date:'Preferred date *',f_time:'Preferred time',f_phone:'WhatsApp / Phone',f_lang:'Preferred language',f_notes:'Special requests',
+    pay_method:'Payment method',pay_card:'Online card',pay_transfer:'Bank transfer',pay_cash:'In person',pay_secure:'Secure payment with Stripe →',
+    bank_title:'Bank transfer details',bank_note:'Include your name and tour date in the reference',confirm_transfer:'Confirm by bank transfer',confirm_cash:'Confirm booking',cash_note:'You will pay at the start of the tour.',
+    modal_note:'✓ No extra charges · ✓ Confirmation within 24h',success_title:'Request sent!',success_desc:'Ricardo will contact you within 24 hours.',success_wa:'Confirm via WhatsApp →'
+  },
+  fr:{
+    nav_monuments:'Monuments',nav_tours:'Visites',nav_guide:'Le Guide',nav_contact:'Contact',nav_book:'Réserver →',
+    hero_badge:'Guide Officiel d\'Andalousie',hero_title:'Découvrez la magie\nde Cordoue',hero_sub:'Visites privées exclusives dans la ville avec le plus de Patrimoine Mondial de l\'UNESCO. En 5 langues.',hero_cta1:'Voir mes visites',hero_cta2:'Me contacter',
+    mon_eyebrow:'Patrimoine Mondial UNESCO',mon_title:'Les 5 trésors de Cordoue',mon_desc:'Cordoue abrite des monuments classés au Patrimoine Mondial. Je vous les fais découvrir comme personne d\'autre.',
+    mon1_title:'Mosquée-Cathédrale',mon1_desc:'Le joyau de l\'Islam occidental. 1200 ans d\'histoire dans un seul édifice fascinant.',
+    mon2_title:'Judería',mon2_desc:'Le quartier juif médiéval le mieux conservé d\'Espagne.',
+    mon3_title:'Alcázar de los Reyes Cristianos',mon3_desc:'Forteresse médiévale avec jardins et mosaïques romaines uniques.',
+    mon4_title:'Medina Azahara',mon4_desc:'La ville-palais du Califat de Cordoue. Un trésor archéologique extraordinaire.',
+    mon5_title:'Patios de Cordoue',mon5_desc:'Jardins intimes pleins de fleurs et de tradition. Uniques au monde.',
+    tours_eyebrow:'Visites Privées Exclusives',tours_title:'Choisissez votre expérience',tours_desc:'Toutes les visites sont privées, dans votre langue, adaptées à votre rythme.',
+    featured_badge:'⭐ Le plus populaire',complete_badge:'🏆 Visite complète',per_group:'/groupe',book_btn:'Réserver',
+    t1_name:'Mosquée-Cathédrale UNESCO',t1_dur:'1 heure · Visite privée',t1_desc:'Visite privée du joyau de l\'Islam occidental.',t1_note:'Billets non inclus — gestion possible',
+    t2_name:'Judería UNESCO',t2_dur:'1 heure · Visite privée',t2_desc:'Le quartier juif médiéval et la synagogue du XIVe siècle.',t2_note:'Synagogue incluse',
+    t3_name:'Alcázar',t3_dur:'1 heure · Visite privée',t3_desc:'Forteresse médiévale, jardins magiques et mosaïques romaines.',t3_note:'Billets non inclus',
+    t4_name:'Mosquée + Judería',t4_dur:'2 heures · Visite privée',t4_desc:'Les deux joyaux UNESCO en une seule visite.',
+    t5_name:'Visite Complète',t5_dur:'3 heures · Visite privée',t5_desc:'L\'expérience définitive de Cordoue.',
+    t6_name:'Patios de Cordoue UNESCO',t6_dur:'1-2 heures',t6_desc:'Les patios fleuris les plus célèbres du monde.',t6_note:'Billets optionnels selon saison',
+    t7_name:'Medina Azahara UNESCO',t7_dur:'3 heures',t7_desc:'La ville-palais du Calife Abd al-Rahman III.',t7_note:'Transport non inclus',
+    t8_name:'Visite Panoramique à pied',t8_dur:'2 heures',t8_desc:'Le meilleur de Cordoue en une promenade mémorable.',
+    t9_name:'Visite Gastronomique',t9_dur:'2 heures',t9_desc:'3-4 tavernes traditionnelles. Salmorejo, flamenquín, vins.',t9_note:'Consommations non incluses',
+    t10_name:'Visite Sur Mesure',t10_dur:'Durée flexible',t10_desc:'Créez votre propre itinéraire.',t10_price:'Sur demande',
+    about_eyebrow:'Votre guide',about_title:'Ricardo Bon Pinilla',
+    about_bio1:'Natif de Cordoue et de Toulouse (France), j\'ai également vécu au Canada et au Brésil. Avec plus de 10 ans comme guide officiel, ma passion est de partager l\'histoire et la culture de cette ville unique.',
+    about_bio2:'J\'adapterai la visite à vos intérêts : histoire islamique, romaine, chrétienne ou judéo-séfarade.',
+    cred1:'Guide Officiel d\'Andalousie',cred2:'Guide Officiel de la Mosquée-Cathédrale',cred3:'Visites accessibles aux familles et personnes à mobilité réduite',cred4:'Spécialiste en histoire islamique, romaine, chrétienne et séfarade',
+    langs_label:'LANGUES',
+    gastro_eyebrow:'Visite Gastronomique',gastro_title:'Savourez Cordoue',gastro_desc:'Visitez 3-4 tavernes traditionnelles du centre historique.',gastro_cta:'Réserver Visite Gastronomique — 100€',
+    tab1_name:'Salmorejo cordouan',tab1_desc:'Le plat emblématique de Cordoue.',tab2_name:'Flamenquín',tab2_desc:'L\'escalope panée cordouane.',tab3_name:'Vins de Montilla-Moriles',tab3_desc:'Les vins uniques de la province.',tab4_name:'Tapas traditionnelles',tab4_desc:'La route de tapas la plus authentique de Cordoue.',
+    testi_eyebrow:'Avis',testi_title:'Expériences réelles',
+    testi1:'"Ricardo nous a fait découvrir Cordoue d\'une manière complètement différente. Le meilleur guide que nous ayons eu !"',
+    testi2:'"Une expérience inoubliable. La passion de Ricardo pour l\'histoire de Cordoue est contagieuse."',
+    testi3:'"Nous avons fait la visite de Medina Azahara et c\'était incroyable. Ricardo a tout expliqué avec passion."',
+    contact_eyebrow:'Contact',contact_title:'Parlons-en',c_phone:'Téléphone / WhatsApp',c_location:'Localisation',c_hours:'Disponibilité',c_hours_val:'Tous les jours. Visites à toute heure.',follow_us:'Suivez-nous',
+    footer_desc:'Visites privées exclusives à Cordoue avec Ricardo Bon Pinilla, guide officiel d\'Andalousie et de la Mosquée-Cathédrale.',footer_legal:'Tous les prix incluent la TVA · Visites accessibles',
+    modal_title:'Réserver une visite',f_name:'Nom complet *',f_people:'Nombre de personnes *',f_date:'Date souhaitée *',f_time:'Heure préférée',f_phone:'WhatsApp / Téléphone',f_lang:'Langue préférée',f_notes:'Demandes spéciales',
+    pay_method:'Mode de paiement',pay_card:'Carte en ligne',pay_transfer:'Virement bancaire',pay_cash:'Sur place',pay_secure:'Paiement sécurisé avec Stripe →',
+    bank_title:'Coordonnées bancaires',bank_note:'Indiquez votre nom et la date de la visite en référence',confirm_transfer:'Confirmer par virement',confirm_cash:'Confirmer la réservation',cash_note:'Vous paierez au début de la visite.',
+    modal_note:'✓ Sans frais supplémentaires · ✓ Confirmation sous 24h',success_title:'Demande envoyée !',success_desc:'Ricardo vous contactera dans les 24 heures.',success_wa:'Confirmer via WhatsApp →'
+  },
+  pt:{
+    nav_monuments:'Monumentos',nav_tours:'Tours',nav_guide:'O Guia',nav_contact:'Contato',nav_book:'Reservar →',
+    hero_badge:'Guia Oficial da Andaluzia',hero_title:'Descubra a magia\nde Córdoba',hero_sub:'Tours privados exclusivos pela cidade com mais Património da Humanidade do mundo. Em 5 idiomas.',hero_cta1:'Ver os meus tours',hero_cta2:'Contactar',
+    mon_eyebrow:'Património Mundial UNESCO',mon_title:'Os 5 tesouros de Córdoba',mon_desc:'Córdoba alberga monumentos declarados Património Mundial pela UNESCO. Mostro-os como ninguém mais pode fazer.',
+    mon1_title:'Mesquita-Catedral',mon1_desc:'A joia do Islam ocidental. 1.200 anos de história num único edifício fascinante.',
+    mon2_title:'Juderia',mon2_desc:'O bairro judeu medieval melhor conservado de Espanha.',
+    mon3_title:'Alcázar dos Reis Cristãos',mon3_desc:'Fortaleza medieval com jardins e mosaicos romanos únicos.',
+    mon4_title:'Medina Azahara',mon4_desc:'A cidade-palácio do Califado de Córdoba. Um tesouro arqueológico extraordinário.',
+    mon5_title:'Pátios de Córdoba',mon5_desc:'Jardins íntimos cheios de flores e tradição. Únicos no mundo.',
+    tours_eyebrow:'Tours Privados Exclusivos',tours_title:'Escolha a sua experiência',tours_desc:'Todos os tours são privados, no seu idioma, adaptados ao seu ritmo.',
+    featured_badge:'⭐ Mais popular',complete_badge:'🏆 Tour completo',per_group:'/grupo',book_btn:'Reservar',
+    t1_name:'Mesquita-Catedral UNESCO',t1_dur:'1 hora · Tour privado',t1_desc:'Visita privada à joia do Islam ocidental.',t1_note:'Bilhetes não incluídos',
+    t2_name:'Juderia UNESCO',t2_dur:'1 hora · Tour privado',t2_desc:'O bairro judeu medieval e a sinagoga do século XIV.',t2_note:'Sinagoga incluída',
+    t3_name:'Alcázar',t3_dur:'1 hora · Tour privado',t3_desc:'Fortaleza medieval, jardins mágicos e mosaicos romanos.',t3_note:'Bilhetes não incluídos',
+    t4_name:'Mesquita + Juderia',t4_dur:'2 horas · Tour privado',t4_desc:'As duas joias UNESCO numa só visita.',
+    t5_name:'Tour Completo',t5_dur:'3 horas · Tour privado',t5_desc:'A experiência definitiva de Córdoba.',
+    t6_name:'Tour dos Pátios UNESCO',t6_dur:'1-2 horas',t6_desc:'Os pátios floridos mais famosos do mundo.',t6_note:'Bilhetes opcionais por temporada',
+    t7_name:'Medina Azahara UNESCO',t7_dur:'3 horas',t7_desc:'A cidade-palácio do Califa Abd al-Rahman III.',t7_note:'Transporte não incluído',
+    t8_name:'Tour Panorâmico a pé',t8_dur:'2 horas',t8_desc:'O melhor de Córdoba numa caminhada memorável.',
+    t9_name:'Tour Gastronómico',t9_dur:'2 horas',t9_desc:'3-4 tabernas tradicionais. Salmorejo, flamenquín, vinhos.',t9_note:'Consumição não incluída',
+    t10_name:'Tour à Medida',t10_dur:'Duração flexível',t10_desc:'Crie o seu próprio roteiro.',t10_price:'Consultar',
+    about_eyebrow:'O seu guia',about_title:'Ricardo Bon Pinilla',
+    about_bio1:'Natural de Córdoba e Toulouse (França), vivi também no Canadá e no Brasil. Com mais de 10 anos como guia oficial, a minha paixão é partilhar a história e a cultura desta cidade única.',
+    about_bio2:'Adaptarei o percurso aos seus interesses: história islâmica, romana, cristã ou judaico-sefardita.',
+    cred1:'Guia Oficial da Andaluzia',cred2:'Guia Oficial da Mesquita-Catedral',cred3:'Tours acessíveis para famílias e pessoas com mobilidade reduzida',cred4:'Especialista em história islâmica, romana, cristã e sefardita',
+    langs_label:'IDIOMAS',
+    gastro_eyebrow:'Tour Gastronómico',gastro_title:'Saboreie Córdoba',gastro_desc:'Visite 3-4 tabernas tradicionais do centro histórico.',gastro_cta:'Reservar Tour Gastronómico — 100€',
+    tab1_name:'Salmorejo cordobés',tab1_desc:'O prato estrela de Córdoba.',tab2_name:'Flamenquín',tab2_desc:'O clássico escalope panado cordobés.',tab3_name:'Vinhos de Montilla-Moriles',tab3_desc:'Os vinhos únicos da província.',tab4_name:'Tapas tradicionais',tab4_desc:'A rota de tapas mais autêntica de Córdoba.',
+    testi_eyebrow:'Avaliações',testi_title:'Experiências reais',
+    testi1:'"Ricardo fez-nos viver Córdoba de uma maneira completamente diferente. O melhor guia que já tivemos!"',
+    testi2:'"Uma experiência inesquecível. A paixão do Ricardo pela história de Córdoba é contagiante."',
+    testi3:'"Fizemos o tour da Medina Azahara e foi incrível. Ricardo explicou tudo com paixão e detalhe."',
+    contact_eyebrow:'Contacto',contact_title:'Falemos',c_phone:'Telefone / WhatsApp',c_location:'Localização',c_hours:'Disponibilidade',c_hours_val:'Todos os dias. Tours a qualquer hora.',follow_us:'Siga-nos',
+    footer_desc:'Tours privados exclusivos por Córdoba com Ricardo Bon Pinilla, guia oficial da Andaluzia e da Mesquita-Catedral.',footer_legal:'Todos os preços incluem IVA · Tours acessíveis',
+    modal_title:'Reservar Tour',f_name:'Nome completo *',f_people:'Número de pessoas *',f_date:'Data desejada *',f_time:'Hora preferida',f_phone:'WhatsApp / Telefone',f_lang:'Idioma preferido',f_notes:'Pedidos especiais',
+    pay_method:'Método de pagamento',pay_card:'Cartão online',pay_transfer:'Transferência bancária',pay_cash:'Presencial',pay_secure:'Pagamento seguro com Stripe →',
+    bank_title:'Dados bancários',bank_note:'Inclua o seu nome e data do tour na referência',confirm_transfer:'Confirmar por transferência',confirm_cash:'Confirmar reserva',cash_note:'Pagará no início do tour.',
+    modal_note:'✓ Sem custos adicionais · ✓ Confirmação em 24h',success_title:'Pedido enviado!',success_desc:'Ricardo entrará em contacto em menos de 24 horas.',success_wa:'Confirmar via WhatsApp →'
+  },
+  it:{
+    nav_monuments:'Monumenti',nav_tours:'Tour',nav_guide:'La Guida',nav_contact:'Contatto',nav_book:'Prenota →',
+    hero_badge:'Guida Ufficiale dell\'Andalusia',hero_title:'Scopri la magia\ndi Córdoba',hero_sub:'Tour privati esclusivi nella città con più Patrimonio dell\'Umanità del mondo. In 5 lingue.',hero_cta1:'Vedi i miei tour',hero_cta2:'Contattami',
+    mon_eyebrow:'Patrimonio Mondiale UNESCO',mon_title:'I 5 tesori di Córdoba',mon_desc:'Córdoba ospita monumenti dichiarati Patrimonio Mondiale dall\'UNESCO. Ve li mostro come nessun altro può fare.',
+    mon1_title:'Moschea-Cattedrale',mon1_desc:'Il gioiello dell\'Islam occidentale. 1.200 anni di storia in un unico edificio affascinante.',
+    mon2_title:'Judería',mon2_desc:'Il quartiere ebraico medievale meglio conservato di Spagna.',
+    mon3_title:'Alcázar dei Re Cristiani',mon3_desc:'Fortezza medievale con giardini e mosaici romani unici.',
+    mon4_title:'Medina Azahara',mon4_desc:'La città-palazzo del Califfato di Córdoba. Un tesoro archeologico straordinario.',
+    mon5_title:'Patio di Córdoba',mon5_desc:'Giardini intimi pieni di fiori e tradizione. Unici al mondo.',
+    tours_eyebrow:'Tour Privati Esclusivi',tours_title:'Scegli la tua esperienza',tours_desc:'Tutti i tour sono privati, nella tua lingua, adattati al tuo ritmo.',
+    featured_badge:'⭐ Il più popolare',complete_badge:'🏆 Tour completo',per_group:'/gruppo',book_btn:'Prenota',
+    t1_name:'Moschea-Cattedrale UNESCO',t1_dur:'1 ora · Tour privato',t1_desc:'Visita privata al gioiello dell\'Islam occidentale.',t1_note:'Biglietti non inclusi',
+    t2_name:'Judería UNESCO',t2_dur:'1 ora · Tour privato',t2_desc:'Il quartiere ebraico medievale e la sinagoga del XIV secolo.',t2_note:'Sinagoga inclusa',
+    t3_name:'Alcázar',t3_dur:'1 ora · Tour privato',t3_desc:'Fortezza medievale, giardini magici e mosaici romani.',t3_note:'Biglietti non inclusi',
+    t4_name:'Moschea + Judería',t4_dur:'2 ore · Tour privato',t4_desc:'I due gioielli UNESCO in una sola visita.',
+    t5_name:'Tour Completo',t5_dur:'3 ore · Tour privato',t5_desc:'L\'esperienza definitiva di Córdoba.',
+    t6_name:'Tour dei Patio UNESCO',t6_dur:'1-2 ore',t6_desc:'I patio fioriti più famosi del mondo.',t6_note:'Biglietti opzionali per stagione',
+    t7_name:'Medina Azahara UNESCO',t7_dur:'3 ore',t7_desc:'La città-palazzo del Califfo Abd al-Rahman III.',t7_note:'Trasporto non incluso',
+    t8_name:'Tour Panoramico a piedi',t8_dur:'2 ore',t8_desc:'Il meglio di Córdoba in una passeggiata memorabile.',
+    t9_name:'Tour Gastronomico',t9_dur:'2 ore',t9_desc:'3-4 taverne tradizionali. Salmorejo, flamenquín, vini.',t9_note:'Consumazioni non incluse',
+    t10_name:'Tour Su Misura',t10_dur:'Durata flessibile',t10_desc:'Crea il tuo itinerario personalizzato.',t10_price:'Su richiesta',
+    about_eyebrow:'La tua guida',about_title:'Ricardo Bon Pinilla',
+    about_bio1:'Originario di Córdoba e Tolosa (Francia), ho vissuto anche in Canada e Brasile. Con oltre 10 anni come guida ufficiale, la mia passione è condividere la storia e la cultura di questa città unica.',
+    about_bio2:'Adatterò il percorso ai tuoi interessi: storia islamica, romana, cristiana o giudeo-sefardita.',
+    cred1:'Guida Ufficiale dell\'Andalusia',cred2:'Guida Ufficiale della Moschea-Cattedrale',cred3:'Tour accessibili per famiglie e persone con mobilità ridotta',cred4:'Specialista in storia islamica, romana, cristiana e sefardita',
+    langs_label:'LINGUE',
+    gastro_eyebrow:'Tour Gastronomico',gastro_title:'Assapora Córdoba',gastro_desc:'Visita 3-4 taverne tradizionali del centro storico.',gastro_cta:'Prenota Tour Gastronomico — 100€',
+    tab1_name:'Salmorejo cordobés',tab1_desc:'Il piatto simbolo di Córdoba.',tab2_name:'Flamenquín',tab2_desc:'La classica cotoletta cordobesa.',tab3_name:'Vini di Montilla-Moriles',tab3_desc:'I vini unici della provincia.',tab4_name:'Tapas tradizionali',tab4_desc:'Il percorso di tapas più autentico di Córdoba.',
+    testi_eyebrow:'Recensioni',testi_title:'Esperienze reali',
+    testi1:'"Ricardo ci ha fatto vivere Córdoba in modo completamente diverso. La migliore guida che abbiamo mai avuto!"',
+    testi2:'"Un\'esperienza indimenticabile. La passione di Ricardo per la storia di Córdoba è contagiosa."',
+    testi3:'"Abbiamo fatto il tour di Medina Azahara ed è stato incredibile. Ricardo ha spiegato tutto con passione."',
+    contact_eyebrow:'Contatto',contact_title:'Parliamoci',c_phone:'Telefono / WhatsApp',c_location:'Posizione',c_hours:'Disponibilità',c_hours_val:'Tutti i giorni. Tour a qualsiasi ora.',follow_us:'Seguici',
+    footer_desc:'Tour privati esclusivi a Córdoba con Ricardo Bon Pinilla, guida ufficiale dell\'Andalusia e della Moschea-Cattedrale.',footer_legal:'Tutti i prezzi includono IVA · Tour accessibili',
+    modal_title:'Prenota un Tour',f_name:'Nome completo *',f_people:'Numero di persone *',f_date:'Data desiderata *',f_time:'Ora preferita',f_phone:'WhatsApp / Telefono',f_lang:'Lingua preferita',f_notes:'Richieste speciali',
+    pay_method:'Metodo di pagamento',pay_card:'Carta online',pay_transfer:'Bonifico bancario',pay_cash:'Di persona',pay_secure:'Pagamento sicuro con Stripe →',
+    bank_title:'Dati bancari',bank_note:'Includi il tuo nome e la data del tour nella causale',confirm_transfer:'Conferma con bonifico',confirm_cash:'Conferma prenotazione',cash_note:'Pagherai all\'inizio del tour.',
+    modal_note:'✓ Senza costi aggiuntivi · ✓ Conferma entro 24h',success_title:'Richiesta inviata!',success_desc:'Ricardo ti contatterà entro 24 ore.',success_wa:'Conferma via WhatsApp →'
+  }
+};
+
+let currentLang = 'es';
+let currentPayMethod = 'stripe';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(b => { if(b.textContent.toLowerCase() === lang) b.classList.add('active'); });
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    if (T[lang] && T[lang][key]) el.textContent = T[lang][key];
+  });
+  document.documentElement.lang = lang;
+}
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// ── BOOKING MODAL ──
+function openBooking(tourName) {
+  document.getElementById('selected-tour').textContent = tourName;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.getElementById('booking-form-content').style.display = 'block';
+  document.getElementById('booking-success').style.display = 'none';
+  document.body.style.overflow = 'hidden';
+  const today = new Date();
+  today.setDate(today.getDate() + 1);
+  document.getElementById('f-fecha').min = today.toISOString().split('T')[0];
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeBooking(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function selectPayment(el, method) {
+  document.querySelectorAll('.payment-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  currentPayMethod = method;
+  document.getElementById('stripe-section').style.display = method === 'stripe' ? 'block' : 'none';
+  document.getElementById('transfer-section').style.display = method === 'transfer' ? 'block' : 'none';
+  document.getElementById('presencial-section').style.display = method === 'presencial' ? 'block' : 'none';
+}
+
+function processPayment() {
+  const nombre = document.getElementById('f-nombre').value;
+  const email = document.getElementById('f-email').value;
+  if (!nombre || !email) { alert('Por favor, completa nombre y email.'); return; }
+  // Stripe integration placeholder — conectar con tu cuenta Stripe
+  const STRIPE_URL = 'https://buy.stripe.com/TU_LINK_AQUI';
+  // Mientras no está configurado Stripe, enviamos por WhatsApp
+  const tour = document.getElementById('selected-tour').textContent;
+  const fecha = document.getElementById('f-fecha').value;
+  const personas = document.getElementById('f-personas').value;
+  const msg = encodeURIComponent(`Hola Ricardo, quiero reservar:\n🎯 ${tour}\n📅 Fecha: ${fecha}\n👥 Personas: ${personas}\n👤 Nombre: ${nombre}\n📧 Email: ${email}`);
+  window.open(`https://wa.me/34651369426?text=${msg}`, '_blank');
+  submitBooking();
+}
+
+function submitBooking() {
+  const nombre = document.getElementById('f-nombre').value;
+  const email = document.getElementById('f-email').value;
+  if (!nombre || !email) { alert('Por favor, completa nombre y email.'); return; }
+  const WEBHOOK = 'TU_WEBHOOK_MAKE_AQUI';
+  const data = {
+    tour: document.getElementById('selected-tour').textContent,
+    nombre, email,
+    whatsapp: document.getElementById('f-tel').value,
+    fecha: document.getElementById('f-fecha').value,
+    hora: document.getElementById('f-hora').value,
+    personas: document.getElementById('f-personas').value,
+    idioma: document.getElementById('f-idioma').value,
+    notas: document.getElementById('f-notas').value,
+    pago: currentPayMethod,
+    lang: currentLang,
+    timestamp: new Date().toISOString()
+  };
+  fetch(WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) }).catch(() => {});
+  document.getElementById('booking-form-content').style.display = 'none';
+  document.getElementById('booking-success').style.display = 'block';
+  setLang(currentLang);
+}
+
+// ── LOADER ──
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1200);
+});
+
+// ── INIT ──
+setLang('es');
 </script>
-</body></html>
+</body>
+</html>
