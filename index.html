@@ -999,7 +999,7 @@ footer { background: var(--dark); padding: 3.5rem 2rem 1.8rem; }
         <div class="pay-opt" onclick="selPay(this,'cash')"><span>En persona</span></div>
       </div>
       <div id="pay-card-sec">
-        <button class="modal-submit" onclick="doSubmit()">Confirmar reserva</button>
+        <button class="modal-submit" onclick="doPayPal()">Pagar con PayPal — pago seguro</button>
         <button class="modal-wa-submit" onclick="doWA()">Confirmar por WhatsApp</button>
       </div>
       <div id="pay-transfer-sec" style="display:none">
@@ -1053,6 +1053,24 @@ function selPay(el, m) {
 function getModalData() {
   return { tour: window._tourSel, nombre: document.getElementById('mf_n').value.trim(), email: document.getElementById('mf_e').value.trim(), wa: document.getElementById('mf_w').value, fecha: document.getElementById('mf_d').value, hora: document.getElementById('mf_h').value, pax: document.getElementById('mf_p').value, idioma: document.getElementById('mf_l').value, notas: document.getElementById('mf_nt').value, pago: payMode, ts: new Date().toISOString() };
 }
+
+function doPayPal() {
+  const d = getModalData();
+  if (!d.nombre || !d.email) { alert('Por favor, completa nombre y email.'); return; }
+  const priceMatch = (d.tour || '').match(/(\d+)\s*€/);
+  const amount = priceMatch ? priceMatch[1] : '0';
+  const params = new URLSearchParams({
+    cmd: '_xclick',
+    business: 'ricardo.bon@hotmail.fr',
+    item_name: d.tour,
+    amount: amount,
+    currency_code: 'EUR',
+    no_shipping: '1'
+  });
+  window.open('https://www.paypal.com/cgi-bin/webscr?' + params.toString(), '_blank');
+  doSubmit();
+}
+
 function doSubmit() {
   const d = getModalData();
   if (!d.nombre || !d.email) { alert('Por favor, completa nombre y email.'); return; }
