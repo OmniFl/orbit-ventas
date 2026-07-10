@@ -1,0 +1,1 @@
+ricardo-cordoba.jpg
