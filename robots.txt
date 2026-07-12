@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://magictourscordoba.com/sitemap.xml
